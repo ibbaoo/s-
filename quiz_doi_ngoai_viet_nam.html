@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ôn tập Lịch Sử Lớp 12 – Trắc nghiệm Hoạt Động Đối Ngoại Việt Nam 1945 đến nay. 10 câu hỏi có đáp án và giải thích." />
+  <meta name="description" content="Ôn tập Lịch Sử Lớp 12 – Trắc nghiệm Hoạt Động Đối Ngoại Việt Nam 1945 đến nay." />
   <meta property="og:title" content="Trắc Nghiệm: Hoạt Động Đối Ngoại Việt Nam" />
   <meta property="og:description" content="10 câu trắc nghiệm Lịch Sử Lớp 12 – Đối ngoại Việt Nam 1945–Nay" />
   <meta property="og:type" content="website" />
   <title>Trắc Nghiệm: Hoạt Động Đối Ngoại Việt Nam</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
   <style>
     /* ── RESET & TOKENS ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +33,6 @@
       --border:   #f0e0e8;
     }
 
-    /* ── BASE ── */
     body {
       font-family: 'Nunito', 'Segoe UI', sans-serif;
       background: var(--page-bg);
@@ -41,14 +43,8 @@
       overflow-x: hidden;
     }
 
-    /* ── DECORATIVE BACKGROUND ── */
-    .bg-deco {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
+    /* ── DECORATIVE BG ── */
+    .bg-deco { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
     .bg-deco::before {
       content: '';
       position: absolute;
@@ -61,11 +57,7 @@
     }
 
     /* ── CORNER SVG ── */
-    .corner-svg {
-      position: fixed;
-      pointer-events: none;
-      z-index: 0;
-    }
+    .corner-svg { position: fixed; pointer-events: none; z-index: 0; }
     .corner-svg.tl { top: 0; left: 0; }
     .corner-svg.tr { top: 0; right: 0; transform: scaleX(-1); }
     .corner-svg.bl { bottom: 0; left: 0; transform: scaleY(-1); }
@@ -73,12 +65,8 @@
 
     /* ── FLOATING EMOJI ── */
     .float-item {
-      position: fixed;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.55;
-      font-size: 1.4rem;
-      user-select: none;
+      position: fixed; pointer-events: none; z-index: 0;
+      opacity: .55; font-size: 1.4rem; user-select: none;
       animation: floatAnim ease-in-out infinite alternate;
     }
     @keyframes floatAnim {
@@ -86,48 +74,30 @@
       to   { transform: translateY(-16px) rotate(5deg); }
     }
 
-    /* ── LAYOUT STACKING ── */
-    .header, .slides-container, #result-screen { position: relative; z-index: 1; }
+    /* ── Z-LAYER ── */
+    .header, .slides-container, #result-screen, #thankyou-screen { position: relative; z-index: 1; }
 
     /* ── HEADER ── */
     .header { text-align: center; padding: 38px 20px 18px; margin-bottom: 4px; }
-
     .header-emoji-row {
-      font-size: 2rem;
-      letter-spacing: 6px;
-      margin-bottom: 12px;
-      display: inline-block;
-      animation: wiggle 3s ease-in-out infinite;
+      font-size: 2rem; letter-spacing: 6px; margin-bottom: 12px;
+      display: inline-block; animation: wiggle 3s ease-in-out infinite;
     }
     @keyframes wiggle {
-      0%, 100% { transform: rotate(-2deg); }
-      50%       { transform: rotate(2deg); }
+      0%,100% { transform: rotate(-2deg); }
+      50%      { transform: rotate(2deg); }
     }
-
     .header h1 {
-      font-size: 2rem;
-      font-weight: 900;
+      font-size: 2rem; font-weight: 900;
       background: linear-gradient(135deg, var(--red-flag) 0%, var(--pink) 50%, var(--peach) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 6px;
-      line-height: 1.2;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; line-height: 1.2;
     }
-
     .header .subtitle { color: var(--muted); font-size: 1rem; font-weight: 600; }
-
     .badge-row { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
     .badge {
-      background: white;
-      border: 2px solid var(--border);
-      border-radius: 20px;
-      padding: 4px 14px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--muted);
+      background: white; border: 2px solid var(--border); border-radius: 20px;
+      padding: 4px 14px; font-size: .78rem; font-weight: 700; color: var(--muted);
       box-shadow: 0 2px 8px rgba(0,0,0,.06);
     }
     .badge.red   { border-color: #ffb3c6; color: var(--red-flag); background: #fff5f7; }
@@ -136,10 +106,8 @@
 
     /* ── SLIDES ── */
     .slides-container { max-width: 860px; margin: 0 auto; padding: 0 16px; min-height: 400px; }
-
     .slide { display: none; animation: popIn .4s cubic-bezier(.34,1.56,.64,1); }
     .slide.active { display: block; }
-
     @keyframes popIn {
       from { opacity: 0; transform: scale(.95) translateY(10px); }
       to   { opacity: 1; transform: scale(1)   translateY(0); }
@@ -147,195 +115,108 @@
 
     /* ── QUESTION CARD ── */
     .question-card {
-      background: white;
-      border-radius: 28px;
-      padding: 36px 36px 28px;
+      background: white; border-radius: 28px; padding: 36px 36px 28px;
       box-shadow: 0 8px 40px rgba(255,107,157,.12), 0 2px 12px rgba(0,0,0,.06);
-      border: 2px solid var(--border);
-      position: relative;
-      overflow: hidden;
+      border: 2px solid var(--border); position: relative; overflow: hidden;
     }
-    /* rainbow top strip */
     .question-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 6px;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
       background: linear-gradient(90deg, var(--red-flag), var(--pink), var(--peach), var(--mint), var(--sky), var(--lavender));
       border-radius: 28px 28px 0 0;
     }
-    /* glow circle top-right */
     .question-card::after {
-      content: '';
-      position: absolute;
-      top: -30px; right: -30px;
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #ffeaa7 0%, transparent 70%);
-      opacity: .45;
+      content: ''; position: absolute; top: -30px; right: -30px;
+      width: 100px; height: 100px; border-radius: 50%;
+      background: radial-gradient(circle, #ffeaa7 0%, transparent 70%); opacity: .45;
     }
-
     .q-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
     .question-number {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      display: inline-flex; align-items: center; gap: 6px;
       background: linear-gradient(135deg, var(--red-flag), var(--pink));
-      color: white;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 20px;
+      color: white; font-size: .78rem; font-weight: 800; letter-spacing: 1px;
+      text-transform: uppercase; padding: 6px 16px; border-radius: 20px;
       box-shadow: 0 3px 10px rgba(218,2,14,.25);
     }
-
-    /* ── QUESTION TEXT ── */
     .question-text {
-      font-size: 1.38rem;
-      font-weight: 700;
-      line-height: 1.65;
-      color: #2d3436;
-      margin-bottom: 28px;
-      padding-left: 4px;
+      font-size: 1.38rem; font-weight: 700; line-height: 1.65;
+      color: #2d3436; margin-bottom: 28px; padding-left: 4px;
     }
 
     /* ── OPTIONS ── */
     .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
     .option-btn {
-      position: relative;
-      padding: 15px 16px 15px 56px;
-      border-radius: 16px;
-      border: 2.5px solid #f0e8f5;
-      background: #fafafa;
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 700;
-      font-family: inherit;
-      line-height: 1.45;
-      cursor: pointer;
-      text-align: left;
-      transition: all .22s cubic-bezier(.34,1.56,.64,1);
+      position: relative; padding: 15px 16px 15px 56px; border-radius: 16px;
+      border: 2.5px solid #f0e8f5; background: #fafafa; color: var(--text);
+      font-size: 1rem; font-weight: 700; font-family: inherit; line-height: 1.45;
+      cursor: pointer; text-align: left; transition: all .22s cubic-bezier(.34,1.56,.64,1);
       min-height: 66px;
     }
     .option-btn .letter {
-      position: absolute;
-      left: 14px; top: 50%;
-      transform: translateY(-50%);
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      color: white;
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      width: 30px; height: 30px; border-radius: 50%; color: white;
       display: flex; align-items: center; justify-content: center;
-      font-size: .82rem; font-weight: 900;
-      transition: all .22s;
+      font-size: .82rem; font-weight: 900; transition: all .22s;
     }
     .option-btn:nth-child(1) .letter { background: linear-gradient(135deg,#fd79a8,#e84393); box-shadow: 0 2px 8px rgba(253,121,168,.4); }
     .option-btn:nth-child(2) .letter { background: linear-gradient(135deg,#74b9ff,#0984e3); box-shadow: 0 2px 8px rgba(116,185,255,.4); }
     .option-btn:nth-child(3) .letter { background: linear-gradient(135deg,#55efc4,#00b894); box-shadow: 0 2px 8px rgba(85,239,196,.4); }
     .option-btn:nth-child(4) .letter { background: linear-gradient(135deg,#fdcb6e,#e17055); box-shadow: 0 2px 8px rgba(253,203,110,.4); }
-
     .option-btn:hover:not(:disabled) {
-      border-color: var(--pink);
-      background: #fff5f9;
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 8px 24px rgba(255,107,157,.18);
+      border-color: var(--pink); background: #fff5f9;
+      transform: translateY(-3px) scale(1.01); box-shadow: 0 8px 24px rgba(255,107,157,.18);
     }
     .option-btn:disabled { cursor: default; }
-
     .option-btn.correct {
-      border-color: #00b894 !important;
-      background: #f0fff8 !important;
-      box-shadow: 0 6px 24px rgba(0,184,148,.25) !important;
-      transform: scale(1.02) !important;
+      border-color: #00b894 !important; background: #f0fff8 !important;
+      box-shadow: 0 6px 24px rgba(0,184,148,.25) !important; transform: scale(1.02) !important;
     }
     .option-btn.correct .letter {
       background: linear-gradient(135deg,#00b894,#00cec9) !important;
       box-shadow: 0 3px 12px rgba(0,184,148,.5) !important;
     }
-    .option-btn.wrong {
-      border-color: #e17055 !important;
-      background: #fff5f3 !important;
-    }
+    .option-btn.wrong { border-color: #e17055 !important; background: #fff5f3 !important; }
     .option-btn.wrong .letter {
       background: linear-gradient(135deg,#e17055,#d63031) !important;
       box-shadow: 0 3px 12px rgba(225,112,85,.5) !important;
     }
 
     /* ── EXPLANATION ── */
-    .explanation {
-      display: none;
-      margin-top: 20px;
-      padding: 16px 20px;
-      border-radius: 14px;
-      font-size: .97rem;
-      font-weight: 600;
-      line-height: 1.6;
-    }
+    .explanation { display: none; margin-top: 20px; padding: 16px 20px; border-radius: 14px; font-size: .97rem; font-weight: 600; line-height: 1.6; }
     .explanation.show        { display: block; animation: popIn .35s ease; }
     .explanation.correct-exp { background: #e8fdf5; border: 2px solid #b2f0d4; color: #00695c; }
     .explanation.wrong-exp   { background: #fff3f0; border: 2px solid #ffd0c0; color: #c0392b; }
 
-    /* ── NAVIGATION ── */
+    /* ── NAV ── */
     .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; gap: 10px; }
-
     .nav-btn {
-      padding: 11px 26px;
-      border-radius: 50px;
-      border: 2.5px solid var(--border);
-      background: white;
-      color: var(--muted);
-      font-size: .92rem;
-      font-weight: 800;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all .2s;
+      padding: 11px 26px; border-radius: 50px; border: 2.5px solid var(--border);
+      background: white; color: var(--muted); font-size: .92rem; font-weight: 800;
+      font-family: inherit; cursor: pointer; transition: all .2s;
       box-shadow: 0 2px 10px rgba(0,0,0,.06);
     }
     .nav-btn:hover:not(:disabled) { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
     .nav-btn:disabled { opacity: .3; cursor: default; }
     .nav-btn.primary {
       background: linear-gradient(135deg, var(--red-flag), var(--pink));
-      border-color: transparent;
-      color: white;
-      box-shadow: 0 4px 16px rgba(218,2,14,.3);
+      border-color: transparent; color: white; box-shadow: 0 4px 16px rgba(218,2,14,.3);
     }
     .nav-btn.primary:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(218,2,14,.35); }
-
-    .nav-counter {
-      font-size: .82rem;
-      font-weight: 700;
-      color: var(--muted);
-      background: #f7f0ff;
-      padding: 6px 14px;
-      border-radius: 20px;
-    }
+    .nav-counter { font-size: .82rem; font-weight: 700; color: var(--muted); background: #f7f0ff; padding: 6px 14px; border-radius: 20px; }
 
     /* ── RESULT SCREEN ── */
     #result-screen {
-      display: none;
-      text-align: center;
-      animation: popIn .5s ease;
-      padding: 40px 20px;
-      max-width: 600px;
-      margin: 0 auto;
+      display: none; text-align: center; animation: popIn .5s ease;
+      padding: 40px 20px; max-width: 600px; margin: 0 auto;
     }
-
     .result-confetti { font-size: 3rem; margin-bottom: 10px; animation: bounce 1s ease infinite alternate; }
     @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-12px); } }
-
     .result-circle {
-      width: 170px; height: 170px;
-      border-radius: 50%;
+      width: 170px; height: 170px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 24px;
-      box-shadow: 0 8px 32px rgba(0,184,148,.3);
+      margin: 0 auto 24px; box-shadow: 0 8px 32px rgba(0,184,148,.3);
     }
     .result-inner {
-      width: 138px; height: 138px;
-      border-radius: 50%;
-      background: white;
+      width: 138px; height: 138px; border-radius: 50%; background: white;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       box-shadow: inset 0 2px 8px rgba(0,0,0,.06);
     }
@@ -343,26 +224,56 @@
     .result-total { font-size: .95rem; color: var(--muted); font-weight: 700; }
     .result-title { font-size: 1.9rem; font-weight: 900; color: var(--text); margin-bottom: 10px; }
     .result-msg   { color: var(--muted); font-size: 1.05rem; font-weight: 600; margin-bottom: 30px; line-height: 1.5; }
-
     .result-badges { display: flex; justify-content: center; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
     .r-badge { padding: 8px 18px; border-radius: 20px; font-size: .85rem; font-weight: 800; border: 2px solid; }
     .r-badge.g { background: #e8fdf5; border-color: #b2f0d4; color: #00695c; }
     .r-badge.r { background: #fff3f0; border-color: #ffd0c0; color: #c0392b; }
-
     .retry-btn {
       padding: 15px 44px;
       background: linear-gradient(135deg, var(--red-flag), var(--pink));
-      border: none;
-      border-radius: 50px;
-      color: white;
-      font-size: 1.05rem;
-      font-weight: 900;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all .2s;
-      box-shadow: 0 6px 20px rgba(218,2,14,.3);
+      border: none; border-radius: 50px; color: white;
+      font-size: 1.05rem; font-weight: 900; font-family: inherit;
+      cursor: pointer; transition: all .2s; box-shadow: 0 6px 20px rgba(218,2,14,.3);
     }
     .retry-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(218,2,14,.4); }
+
+    /* ── THANK-YOU SCREEN ── */
+    #thankyou-screen {
+      display: none; text-align: center; animation: popIn .6s ease;
+      padding: 60px 20px; max-width: 700px; margin: 0 auto;
+    }
+    .ty-flowers { font-size: 2.6rem; letter-spacing: 8px; margin-bottom: 24px; animation: wiggle 3s ease-in-out infinite; }
+    .ty-card {
+      background: white; border-radius: 28px; padding: 44px 40px;
+      box-shadow: 0 10px 50px rgba(255,107,157,.15), 0 2px 16px rgba(0,0,0,.07);
+      border: 2px solid var(--border); position: relative; overflow: hidden;
+    }
+    .ty-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 7px;
+      background: linear-gradient(90deg, var(--red-flag), var(--pink), var(--peach), var(--mint), var(--sky), var(--lavender));
+      border-radius: 28px 28px 0 0;
+    }
+    .ty-emoji { font-size: 4rem; margin-bottom: 16px; display: block; animation: bounce 1.4s ease infinite alternate; }
+    .ty-title {
+      font-size: 1.7rem; font-weight: 900; margin-bottom: 18px;
+      background: linear-gradient(135deg, var(--red-flag), var(--pink), var(--peach));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .ty-text {
+      font-size: 1.18rem; font-weight: 700; color: var(--text); line-height: 1.8; margin-bottom: 10px;
+    }
+    .ty-sub { font-size: .95rem; color: var(--muted); font-weight: 600; margin-bottom: 30px; }
+    .ty-divider {
+      height: 2px; border-radius: 2px; margin: 24px auto;
+      background: linear-gradient(90deg, transparent, var(--pink), var(--peach), transparent);
+      max-width: 260px;
+    }
+    .ty-names { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px; }
+    .ty-name-badge {
+      background: #fff0f5; border: 2px solid #ffb3c6; border-radius: 20px;
+      padding: 6px 16px; font-size: .88rem; font-weight: 800; color: var(--red-flag);
+    }
+    .ty-flag-row { font-size: 2rem; letter-spacing: 6px; margin-top: 8px; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
@@ -370,21 +281,23 @@
       .header h1     { font-size: 1.5rem; }
       .question-card { padding: 24px 20px 20px; }
       .question-text { font-size: 1.15rem; }
+      .ty-card       { padding: 30px 20px; }
+      .ty-title      { font-size: 1.35rem; }
+      .ty-text       { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Pastel radial background -->
+  <!-- Pastel bg -->
   <div class="bg-deco" aria-hidden="true"></div>
 
-  <!-- Corner SVG flower decorations -->
+  <!-- Corner flowers -->
   <svg class="corner-svg tl" width="230" height="230" viewBox="0 0 230 230" fill="none" aria-hidden="true">
     <circle cx="28" cy="28" r="20" fill="#ffd6e7" opacity=".65"/>
     <circle cx="72" cy="14" r="11" fill="#ffeaa7" opacity=".6"/>
     <circle cx="14" cy="72" r="13" fill="#c7ecee" opacity=".6"/>
     <circle cx="105" cy="38" r="8" fill="#dfe6fd" opacity=".55"/>
-    <circle cx="52" cy="95" r="9" fill="#ffd6e7" opacity=".5"/>
     <g transform="translate(148,26) rotate(20)">
       <ellipse cx="0" cy="-15" rx="7" ry="11" fill="#ffb3c6" opacity=".72"/>
       <ellipse cx="14" cy="-5" rx="7" ry="11" fill="#ffb3c6" opacity=".72" transform="rotate(72 0 0)"/>
@@ -395,7 +308,6 @@
     </g>
     <text x="88" y="85" font-size="15" opacity=".45" fill="#a29bfe">✦</text>
     <text x="42" y="128" font-size="11" opacity=".38" fill="#fd79a8">✦</text>
-    <text x="168" y="58" font-size="9" opacity=".38" fill="#74b9ff">✦</text>
     <circle cx="190" cy="85" r="5" fill="#a29bfe" opacity=".38"/>
     <circle cx="208" cy="105" r="3.5" fill="#fd79a8" opacity=".33"/>
     <circle cx="218" cy="128" r="6" fill="#55efc4" opacity=".32"/>
@@ -416,7 +328,6 @@
     <text x="82" y="82" font-size="15" opacity=".42" fill="#fd79a8">✦</text>
     <circle cx="195" cy="82" r="5" fill="#fd79a8" opacity=".38"/>
     <circle cx="208" cy="105" r="3.5" fill="#a29bfe" opacity=".33"/>
-    <circle cx="218" cy="128" r="6" fill="#ffeaa7" opacity=".32"/>
   </svg>
 
   <svg class="corner-svg bl" width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
@@ -431,9 +342,7 @@
       <ellipse cx="-12" cy="-4" rx="6" ry="10" fill="#fdcb6e" opacity=".65" transform="rotate(288 0 0)"/>
       <circle cx="0" cy="0" r="7" fill="#fff" opacity=".9"/>
     </g>
-    <text x="78" y="78" font-size="13" opacity=".42" fill="#a29bfe">✦</text>
     <circle cx="185" cy="62" r="4.5" fill="#74b9ff" opacity=".38"/>
-    <circle cx="200" cy="82" r="3" fill="#55efc4" opacity=".33"/>
   </svg>
 
   <svg class="corner-svg br" width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
@@ -448,16 +357,14 @@
       <ellipse cx="-13" cy="-4" rx="6.5" ry="10.5" fill="#a29bfe" opacity=".68" transform="rotate(288 0 0)"/>
       <circle cx="0" cy="0" r="7.5" fill="#ffeaa7"/>
     </g>
-    <text x="80" y="78" font-size="13" opacity=".42" fill="#fd79a8">✦</text>
     <circle cx="188" cy="68" r="4.5" fill="#fd79a8" opacity=".38"/>
-    <circle cx="204" cy="90" r="3" fill="#ffeaa7" opacity=".33"/>
   </svg>
 
-  <!-- Floating side emoji -->
+  <!-- Floating emoji -->
   <div class="float-item" style="left:1.5%;top:34%;animation-duration:4.2s"  aria-hidden="true">🌸</div>
   <div class="float-item" style="left:3%;top:56%;animation-duration:5s;animation-delay:1.5s;font-size:1.1rem" aria-hidden="true">⭐</div>
   <div class="float-item" style="right:2%;top:36%;animation-duration:4.5s;animation-delay:.7s"  aria-hidden="true">🌟</div>
-  <div class="float-item" style="right:3%;top:60%;animation-duration:3.8s;animation-delay:2s;font-size:1.05rem" aria-hidden="true">🌺</div>
+  <div class="float-item" style="right:3%;top:60%;animation-duration:3.8s;animation-delay:2s"   aria-hidden="true">🌺</div>
   <div class="float-item" style="left:1.5%;top:74%;animation-duration:5.5s;animation-delay:.3s;font-size:1.1rem" aria-hidden="true">💫</div>
   <div class="float-item" style="right:2%;top:76%;animation-duration:4.8s;animation-delay:1s;font-size:1.1rem"  aria-hidden="true">✨</div>
 
@@ -466,14 +373,14 @@
     <div class="header-emoji-row" aria-hidden="true">🇻🇳 ⭐ 🗺️ ⭐ 🇻🇳</div>
     <h1>Hoạt Động Đối Ngoại<br />Việt Nam</h1>
     <p class="subtitle">Ôn tập Lịch Sử · Lớp 12</p>
-    <div class="badge-row" aria-label="Thông tin bài quiz">
+    <div class="badge-row">
       <span class="badge red">📅 1945 – Nay</span>
       <span class="badge mint">❓ 10 câu hỏi</span>
       <span class="badge peach">⏱️ Trắc nghiệm</span>
     </div>
   </header>
 
-  <!-- ── QUIZ SLIDES (built by JS) ── -->
+  <!-- ── QUIZ SLIDES ── -->
   <main class="slides-container" id="slides-container" aria-live="polite"></main>
 
   <!-- ── RESULT SCREEN ── -->
@@ -494,6 +401,39 @@
     <button class="retry-btn" onclick="restartQuiz()">🔄 Làm lại từ đầu</button>
   </section>
 
+  <!-- ── THANK-YOU SCREEN ── -->
+  <section id="thankyou-screen" aria-live="assertive">
+    <div class="ty-flowers" aria-hidden="true">🌸 🌺 🌸</div>
+    <div class="ty-card">
+      <span class="ty-emoji" aria-hidden="true">🎓</span>
+      <h2 class="ty-title">Cảm ơn cô và các bạn!</h2>
+      <p class="ty-text">đã lắng nghe bài thuyết trình của nhóm</p>
+      <p class="ty-sub">Chủ đề: Hoạt Động Đối Ngoại Việt Nam · Lịch Sử Lớp 12</p>
+      <div class="ty-divider"></div>
+      <div class="ty-flag-row" aria-hidden="true">🇻🇳 ⭐ 🇻🇳</div>
+    </div>
+  </section>
+
+  <!-- ── FIREBASE (CDN, no build needed) ── -->
+  <script type="module">
+    import { initializeApp }  from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics }   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey:            "AIzaSyB7jCPMH4T2YJDQL4NbDw3WYTKosKLkE40",
+      authDomain:        "fefge-67bd3.firebaseapp.com",
+      projectId:         "fefge-67bd3",
+      storageBucket:     "fefge-67bd3.firebasestorage.app",
+      messagingSenderId: "42267352016",
+      appId:             "1:42267352016:web:7414281627c23115f477d5",
+      measurementId:     "G-2G4ZJJ7X2L"
+    };
+
+    const app       = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+  <!-- ── QUIZ LOGIC ── -->
   <script>
     /* ── DATA ── */
     const questions = [
@@ -563,12 +503,12 @@
     const LETTERS = ["A","B","C","D"];
 
     /* ── STATE ── */
-    let currentQ    = 0;
-    let answered    = new Array(questions.length).fill(null);
+    let currentQ     = 0;
+    let answered     = new Array(questions.length).fill(null);
     let correctCount = 0;
     let wrongCount   = 0;
 
-    /* ── BUILD ── */
+    /* ── BUILD SLIDES ── */
     function buildQuiz() {
       const container = document.getElementById("slides-container");
       container.innerHTML = "";
@@ -579,29 +519,27 @@
         slide.id = "slide-" + i;
 
         const optsHtml = q.opts.map((opt, oi) =>
-          `<button class="option-btn" id="opt-${i}-${oi}" onclick="selectAnswer(${i},${oi})">
-             <span class="letter" aria-hidden="true">${LETTERS[oi]}</span>${opt}
-           </button>`
+          '<button class="option-btn" id="opt-' + i + '-' + oi + '" onclick="selectAnswer(' + i + ',' + oi + ')">' +
+            '<span class="letter" aria-hidden="true">' + LETTERS[oi] + '</span>' + opt +
+          '</button>'
         ).join("");
 
         const nextBtn = i < questions.length - 1
-          ? `<button class="nav-btn primary" onclick="goTo(${i + 1})">Tiếp →</button>`
-          : `<button class="nav-btn primary" onclick="showResult()">Kết quả 🎉</button>`;
+          ? '<button class="nav-btn primary" onclick="goTo(' + (i + 1) + ')">Tiếp →</button>'
+          : '<button class="nav-btn primary" onclick="showResult()">Kết quả 🎉</button>';
 
         slide.innerHTML =
-          `<div class="question-card">
-             <div class="q-header">
-               <div class="question-number">${ICONS[i]} Câu ${i + 1} / ${questions.length}</div>
-             </div>
-             <p class="question-text">${q.q}</p>
-             <div class="options-grid">${optsHtml}</div>
-             <div class="explanation" id="exp-${i}" role="alert"></div>
-             <div class="nav-row">
-               <button class="nav-btn" onclick="goTo(${i - 1})" ${i === 0 ? "disabled" : ""}>← Trước</button>
-               <div class="nav-counter">${i + 1} / ${questions.length}</div>
-               ${nextBtn}
-             </div>
-           </div>`;
+          '<div class="question-card">' +
+            '<div class="q-header"><div class="question-number">' + ICONS[i] + ' Câu ' + (i+1) + ' / ' + questions.length + '</div></div>' +
+            '<p class="question-text">' + q.q + '</p>' +
+            '<div class="options-grid">' + optsHtml + '</div>' +
+            '<div class="explanation" id="exp-' + i + '" role="alert"></div>' +
+            '<div class="nav-row">' +
+              '<button class="nav-btn" onclick="goTo(' + (i-1) + ')" ' + (i === 0 ? "disabled" : "") + '>← Trước</button>' +
+              '<div class="nav-counter">' + (i+1) + ' / ' + questions.length + '</div>' +
+              nextBtn +
+            '</div>' +
+          '</div>';
 
         container.appendChild(slide);
       });
@@ -610,21 +548,20 @@
     /* ── SELECT ANSWER ── */
     function selectAnswer(qIdx, optIdx) {
       if (answered[qIdx] !== null) return;
-
       const q         = questions[qIdx];
       const isCorrect = optIdx === q.ans;
 
       answered[qIdx] = isCorrect ? "correct" : "wrong";
       if (isCorrect) correctCount++; else wrongCount++;
 
-      for (let i = 0; i < q.opts.length; i++) {
-        const btn = document.getElementById("opt-" + qIdx + "-" + i);
+      for (var i = 0; i < q.opts.length; i++) {
+        var btn = document.getElementById("opt-" + qIdx + "-" + i);
         btn.disabled = true;
         if (i === q.ans)                    btn.classList.add("correct");
         else if (i === optIdx && !isCorrect) btn.classList.add("wrong");
       }
 
-      const expEl = document.getElementById("exp-" + qIdx);
+      var expEl = document.getElementById("exp-" + qIdx);
       expEl.textContent = (isCorrect ? "✅ Chính xác! " : "❌ Chưa đúng. ") + q.exp;
       expEl.className   = "explanation show " + (isCorrect ? "correct-exp" : "wrong-exp");
     }
@@ -638,24 +575,25 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    /* ── RESULT ── */
+    /* ── SHOW RESULT ── */
     function showResult() {
       document.getElementById("slides-container").style.display = "none";
-      document.getElementById("result-screen").style.display    = "block";
+      var resultEl = document.getElementById("result-screen");
+      resultEl.style.display = "block";
 
-      const pct = correctCount / questions.length;
+      var pct = correctCount / questions.length;
       document.getElementById("result-circle").style.background =
-        `conic-gradient(#00b894 ${pct * 360}deg, #e8fdf5 0deg)`;
-      document.getElementById("res-score").textContent    = correctCount;
-      document.getElementById("rb-correct").textContent   = "✅ " + correctCount + " câu đúng";
-      document.getElementById("rb-wrong").textContent     = "❌ " + wrongCount   + " câu sai";
+        "conic-gradient(#00b894 " + (pct * 360) + "deg, #e8fdf5 0deg)";
+      document.getElementById("res-score").textContent  = correctCount;
+      document.getElementById("rb-correct").textContent = "✅ " + correctCount + " câu đúng";
+      document.getElementById("rb-wrong").textContent   = "❌ " + wrongCount + " câu sai";
 
-      let emoji, title, msg;
-      if      (correctCount === 10) { emoji="🏆"; title="Xuất sắc hoàn hảo!";   msg="Bạn nắm vững tuyệt đối kiến thức đối ngoại Việt Nam! 🌟"; }
-      else if (correctCount >= 8)   { emoji="🎉"; title="Rất giỏi!";             msg="Bạn hiểu rõ phần lớn kiến thức. Thêm một chút nữa thôi! 💪"; }
-      else if (correctCount >= 6)   { emoji="👍"; title="Khá tốt!";              msg="Ổn đấy! Hãy ôn thêm các mốc sự kiện quan trọng nhé. 📚"; }
-      else if (correctCount >= 4)   { emoji="📖"; title="Cần cố gắng thêm!";     msg="Xem lại bài và thử lần nữa, bạn sẽ tiến bộ thôi! 🌱"; }
-      else                          { emoji="💪"; title="Cố lên nào!";            msg="Đừng nản lòng! Xem lại bài học rồi thử lại nhé. 🌈"; }
+      var emoji, title, msg;
+      if      (correctCount === 10) { emoji="🏆"; title="Xuất sắc hoàn hảo!";  msg="Bạn nắm vững tuyệt đối kiến thức đối ngoại Việt Nam! 🌟"; }
+      else if (correctCount >= 8)   { emoji="🎉"; title="Rất giỏi!";            msg="Bạn hiểu rõ phần lớn kiến thức. Thêm một chút nữa thôi! 💪"; }
+      else if (correctCount >= 6)   { emoji="👍"; title="Khá tốt!";             msg="Ổn đấy! Hãy ôn thêm các mốc sự kiện quan trọng nhé. 📚"; }
+      else if (correctCount >= 4)   { emoji="📖"; title="Cần cố gắng thêm!";    msg="Xem lại bài và thử lần nữa, bạn sẽ tiến bộ thôi! 🌱"; }
+      else                          { emoji="💪"; title="Cố lên nào!";           msg="Đừng nản lòng! Xem lại bài học rồi thử lại nhé. 🌈"; }
 
       document.getElementById("res-confetti").textContent = emoji;
       document.getElementById("res-title").textContent    = title;
@@ -663,15 +601,12 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    /* ── RESTART ── */
+    /* ── RESTART → shows thank-you ── */
     function restartQuiz() {
-      currentQ     = 0;
-      answered     = new Array(questions.length).fill(null);
-      correctCount = 0;
-      wrongCount   = 0;
-      document.getElementById("result-screen").style.display   = "none";
-      document.getElementById("slides-container").style.display = "";
-      buildQuiz();
+      /* hide result, show thank-you instead of restarting */
+      document.getElementById("result-screen").style.display  = "none";
+      document.getElementById("thankyou-screen").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     /* ── INIT ── */
