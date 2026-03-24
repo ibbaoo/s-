@@ -1,752 +1,681 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trắc Nghiệm: Hoạt Động Đối Ngoại Việt Nam</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ôn tập Lịch Sử Lớp 12 – Trắc nghiệm Hoạt Động Đối Ngoại Việt Nam 1945 đến nay. 10 câu hỏi có đáp án và giải thích." />
+  <meta property="og:title" content="Trắc Nghiệm: Hoạt Động Đối Ngoại Việt Nam" />
+  <meta property="og:description" content="10 câu trắc nghiệm Lịch Sử Lớp 12 – Đối ngoại Việt Nam 1945–Nay" />
+  <meta property="og:type" content="website" />
+  <title>Trắc Nghiệm: Hoạt Động Đối Ngoại Việt Nam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & TOKENS ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink:     #ff6b9d;
+      --peach:    #ffb347;
+      --mint:     #4ecdc4;
+      --sky:      #74b9ff;
+      --lavender: #a29bfe;
+      --red-flag: #da020e;
+      --green:    #00b894;
+      --red:      #e17055;
+      --page-bg:  #fff5f8;
+      --text:     #2d3436;
+      --muted:    #636e72;
+      --border:   #f0e0e8;
+    }
 
-  :root {
-    --pink:    #ff6b9d;
-    --peach:   #ffb347;
-    --mint:    #4ecdc4;
-    --sky:     #74b9ff;
-    --lavender:#a29bfe;
-    --red-flag:#da020e;
-    --green:   #00b894;
-    --red:     #e17055;
-    --card-bg: #ffffff;
-    --page-bg: #fff5f8;
-    --text:    #2d3436;
-    --muted:   #636e72;
-    --border:  #f0e0e8;
-  }
+    /* ── BASE ── */
+    body {
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+      background: var(--page-bg);
+      min-height: 100vh;
+      padding-bottom: 60px;
+      color: var(--text);
+      position: relative;
+      overflow-x: hidden;
+    }
 
-  body {
-    font-family: 'Nunito', 'Segoe UI', sans-serif;
-    background: var(--page-bg);
-    min-height: 100vh;
-    padding: 0 0 60px;
-    color: var(--text);
-    position: relative;
-    overflow-x: hidden;
-  }
+    /* ── DECORATIVE BACKGROUND ── */
+    .bg-deco {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .bg-deco::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle 180px at 5%  15%, #ffd6e7aa 0%, transparent 70%),
+        radial-gradient(circle 140px at 95% 10%, #c7ecee99 0%, transparent 70%),
+        radial-gradient(circle 200px at 90% 85%, #ffeaa788 0%, transparent 70%),
+        radial-gradient(circle 160px at 8%  85%, #dfe6fd99 0%, transparent 70%);
+    }
 
-  /* ── DECORATIVE BG ── */
-  .bg-deco {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-  }
-  .bg-deco::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle 180px at 5% 15%, #ffd6e7aa 0%, transparent 70%),
-      radial-gradient(circle 140px at 95% 10%, #c7ecee99 0%, transparent 70%),
-      radial-gradient(circle 200px at 90% 85%, #ffeaa788 0%, transparent 70%),
-      radial-gradient(circle 160px at 8% 85%, #dfe6fd99 0%, transparent 70%);
-  }
+    /* ── CORNER SVG ── */
+    .corner-svg {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .corner-svg.tl { top: 0; left: 0; }
+    .corner-svg.tr { top: 0; right: 0; transform: scaleX(-1); }
+    .corner-svg.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+    .corner-svg.br { bottom: 0; right: 0; transform: scale(-1); }
 
-  .corner-svg {
-    position: fixed;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .corner-svg.tl { top: 0; left: 0; }
-  .corner-svg.tr { top: 0; right: 0; transform: scaleX(-1); }
-  .corner-svg.bl { bottom: 0; left: 0; transform: scaleY(-1); }
-  .corner-svg.br { bottom: 0; right: 0; transform: scale(-1); }
+    /* ── FLOATING EMOJI ── */
+    .float-item {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.55;
+      font-size: 1.4rem;
+      user-select: none;
+      animation: floatAnim ease-in-out infinite alternate;
+    }
+    @keyframes floatAnim {
+      from { transform: translateY(0)     rotate(-5deg); }
+      to   { transform: translateY(-16px) rotate(5deg); }
+    }
 
-  .header, .score-bar, .progress-wrap, .slides-container, #result-screen {
-    position: relative;
-    z-index: 1;
-  }
+    /* ── LAYOUT STACKING ── */
+    .header, .slides-container, #result-screen { position: relative; z-index: 1; }
 
-  /* ── HEADER ── */
-  .header {
-    text-align: center;
-    padding: 38px 20px 18px;
-    margin-bottom: 4px;
-  }
+    /* ── HEADER ── */
+    .header { text-align: center; padding: 38px 20px 18px; margin-bottom: 4px; }
 
-  .header-emoji-row {
-    font-size: 2rem;
-    letter-spacing: 6px;
-    margin-bottom: 12px;
-    display: inline-block;
-    animation: wiggle 3s ease-in-out infinite;
-  }
+    .header-emoji-row {
+      font-size: 2rem;
+      letter-spacing: 6px;
+      margin-bottom: 12px;
+      display: inline-block;
+      animation: wiggle 3s ease-in-out infinite;
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-2deg); }
+      50%       { transform: rotate(2deg); }
+    }
 
-  @keyframes wiggle {
-    0%,100% { transform: rotate(-2deg); }
-    50%      { transform: rotate(2deg); }
-  }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--red-flag) 0%, var(--pink) 50%, var(--peach) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
 
-  .header h1 {
-    font-size: 2rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, var(--red-flag) 0%, var(--pink) 50%, var(--peach) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 6px;
-    line-height: 1.2;
-  }
+    .header .subtitle { color: var(--muted); font-size: 1rem; font-weight: 600; }
 
-  .header .subtitle {
-    color: var(--muted);
-    font-size: 1rem;
-    font-weight: 600;
-  }
+    .badge-row { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .badge {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .badge.red   { border-color: #ffb3c6; color: var(--red-flag); background: #fff5f7; }
+    .badge.mint  { border-color: #b2ebe8; color: #00897b;         background: #f0fffe; }
+    .badge.peach { border-color: #ffd6a5; color: #e67e22;         background: #fff8f0; }
 
-  .badge-row {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 12px;
-    flex-wrap: wrap;
-  }
+    /* ── SLIDES ── */
+    .slides-container { max-width: 860px; margin: 0 auto; padding: 0 16px; min-height: 400px; }
 
-  .badge {
-    background: white;
-    border: 2px solid var(--border);
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--muted);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  .badge.red   { border-color: #ffb3c6; color: var(--red-flag); background: #fff5f7; }
-  .badge.mint  { border-color: #b2ebe8; color: #00897b;        background: #f0fffe; }
-  .badge.peach { border-color: #ffd6a5; color: #e67e22;        background: #fff8f0; }
+    .slide { display: none; animation: popIn .4s cubic-bezier(.34,1.56,.64,1); }
+    .slide.active { display: block; }
 
-  /* ── PROGRESS DOTS (hidden) ── */
-  .score-bar, .progress-wrap { display: none; }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(.95) translateY(10px); }
+      to   { opacity: 1; transform: scale(1)   translateY(0); }
+    }
 
-  /* ── SLIDES ── */
-  .slides-container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 16px;
-    min-height: 400px;
-  }
+    /* ── QUESTION CARD ── */
+    .question-card {
+      background: white;
+      border-radius: 28px;
+      padding: 36px 36px 28px;
+      box-shadow: 0 8px 40px rgba(255,107,157,.12), 0 2px 12px rgba(0,0,0,.06);
+      border: 2px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    /* rainbow top strip */
+    .question-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--red-flag), var(--pink), var(--peach), var(--mint), var(--sky), var(--lavender));
+      border-radius: 28px 28px 0 0;
+    }
+    /* glow circle top-right */
+    .question-card::after {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffeaa7 0%, transparent 70%);
+      opacity: .45;
+    }
 
-  .slide { display: none; animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1); }
-  .slide.active { display: block; }
+    .q-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .question-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--red-flag), var(--pink));
+      color: white;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      box-shadow: 0 3px 10px rgba(218,2,14,.25);
+    }
 
-  @keyframes popIn {
-    from { opacity: 0; transform: scale(0.95) translateY(10px); }
-    to   { opacity: 1; transform: scale(1)    translateY(0); }
-  }
+    /* ── QUESTION TEXT ── */
+    .question-text {
+      font-size: 1.38rem;
+      font-weight: 700;
+      line-height: 1.65;
+      color: #2d3436;
+      margin-bottom: 28px;
+      padding-left: 4px;
+    }
 
-  /* ── QUESTION CARD ── */
-  .question-card {
-    background: white;
-    border-radius: 28px;
-    padding: 36px 36px 28px;
-    box-shadow: 0 8px 40px rgba(255,107,157,0.12), 0 2px 12px rgba(0,0,0,0.06);
-    border: 2px solid var(--border);
-    position: relative;
-    overflow: hidden;
-  }
+    /* ── OPTIONS ── */
+    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-  .question-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--red-flag), var(--pink), var(--peach), var(--mint), var(--sky), var(--lavender));
-    border-radius: 28px 28px 0 0;
-  }
+    .option-btn {
+      position: relative;
+      padding: 15px 16px 15px 56px;
+      border-radius: 16px;
+      border: 2.5px solid #f0e8f5;
+      background: #fafafa;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      line-height: 1.45;
+      cursor: pointer;
+      text-align: left;
+      transition: all .22s cubic-bezier(.34,1.56,.64,1);
+      min-height: 66px;
+    }
+    .option-btn .letter {
+      position: absolute;
+      left: 14px; top: 50%;
+      transform: translateY(-50%);
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .82rem; font-weight: 900;
+      transition: all .22s;
+    }
+    .option-btn:nth-child(1) .letter { background: linear-gradient(135deg,#fd79a8,#e84393); box-shadow: 0 2px 8px rgba(253,121,168,.4); }
+    .option-btn:nth-child(2) .letter { background: linear-gradient(135deg,#74b9ff,#0984e3); box-shadow: 0 2px 8px rgba(116,185,255,.4); }
+    .option-btn:nth-child(3) .letter { background: linear-gradient(135deg,#55efc4,#00b894); box-shadow: 0 2px 8px rgba(85,239,196,.4); }
+    .option-btn:nth-child(4) .letter { background: linear-gradient(135deg,#fdcb6e,#e17055); box-shadow: 0 2px 8px rgba(253,203,110,.4); }
 
-  .question-card::after {
-    content: '';
-    position: absolute;
-    top: -30px; right: -30px;
-    width: 100px; height: 100px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #ffeaa7 0%, transparent 70%);
-    opacity: 0.45;
-  }
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--pink);
+      background: #fff5f9;
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 8px 24px rgba(255,107,157,.18);
+    }
+    .option-btn:disabled { cursor: default; }
 
-  .q-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
+    .option-btn.correct {
+      border-color: #00b894 !important;
+      background: #f0fff8 !important;
+      box-shadow: 0 6px 24px rgba(0,184,148,.25) !important;
+      transform: scale(1.02) !important;
+    }
+    .option-btn.correct .letter {
+      background: linear-gradient(135deg,#00b894,#00cec9) !important;
+      box-shadow: 0 3px 12px rgba(0,184,148,.5) !important;
+    }
+    .option-btn.wrong {
+      border-color: #e17055 !important;
+      background: #fff5f3 !important;
+    }
+    .option-btn.wrong .letter {
+      background: linear-gradient(135deg,#e17055,#d63031) !important;
+      box-shadow: 0 3px 12px rgba(225,112,85,.5) !important;
+    }
 
-  .question-number {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: linear-gradient(135deg, var(--red-flag), var(--pink));
-    color: white;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 20px;
-    box-shadow: 0 3px 10px rgba(218,2,14,0.25);
-  }
+    /* ── EXPLANATION ── */
+    .explanation {
+      display: none;
+      margin-top: 20px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      font-size: .97rem;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+    .explanation.show        { display: block; animation: popIn .35s ease; }
+    .explanation.correct-exp { background: #e8fdf5; border: 2px solid #b2f0d4; color: #00695c; }
+    .explanation.wrong-exp   { background: #fff3f0; border: 2px solid #ffd0c0; color: #c0392b; }
 
-  /* ── QUESTION TEXT — LARGE ── */
-  .question-text {
-    font-size: 1.38rem;
-    font-weight: 700;
-    line-height: 1.65;
-    color: #2d3436;
-    margin-bottom: 28px;
-    padding-left: 4px;
-  }
+    /* ── NAVIGATION ── */
+    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; gap: 10px; }
 
-  /* ── OPTIONS ── */
-  .options-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
+    .nav-btn {
+      padding: 11px 26px;
+      border-radius: 50px;
+      border: 2.5px solid var(--border);
+      background: white;
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all .2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+    .nav-btn:hover:not(:disabled) { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
+    .nav-btn:disabled { opacity: .3; cursor: default; }
+    .nav-btn.primary {
+      background: linear-gradient(135deg, var(--red-flag), var(--pink));
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 16px rgba(218,2,14,.3);
+    }
+    .nav-btn.primary:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(218,2,14,.35); }
 
-  @media (max-width: 600px) {
-    .options-grid { grid-template-columns: 1fr; }
-    .header h1 { font-size: 1.5rem; }
-    .question-card { padding: 24px 20px 20px; }
-    .question-text { font-size: 1.15rem; }
-  }
+    .nav-counter {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--muted);
+      background: #f7f0ff;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
 
-  .option-btn {
-    position: relative;
-    padding: 15px 16px 15px 56px;
-    border-radius: 16px;
-    border: 2.5px solid #f0e8f5;
-    background: #fafafa;
-    color: var(--text);
-    font-size: 1rem;
-    font-weight: 700;
-    font-family: inherit;
-    line-height: 1.45;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.22s cubic-bezier(0.34,1.56,0.64,1);
-    min-height: 66px;
-  }
+    /* ── RESULT SCREEN ── */
+    #result-screen {
+      display: none;
+      text-align: center;
+      animation: popIn .5s ease;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-  .option-btn .letter {
-    position: absolute;
-    left: 14px; top: 50%;
-    transform: translateY(-50%);
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    color: white;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.82rem; font-weight: 900;
-    transition: all 0.22s;
-  }
+    .result-confetti { font-size: 3rem; margin-bottom: 10px; animation: bounce 1s ease infinite alternate; }
+    @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-12px); } }
 
-  .option-btn:nth-child(1) .letter { background: linear-gradient(135deg, #fd79a8, #e84393); box-shadow: 0 2px 8px rgba(253,121,168,0.4); }
-  .option-btn:nth-child(2) .letter { background: linear-gradient(135deg, #74b9ff, #0984e3); box-shadow: 0 2px 8px rgba(116,185,255,0.4); }
-  .option-btn:nth-child(3) .letter { background: linear-gradient(135deg, #55efc4, #00b894); box-shadow: 0 2px 8px rgba(85,239,196,0.4); }
-  .option-btn:nth-child(4) .letter { background: linear-gradient(135deg, #fdcb6e, #e17055); box-shadow: 0 2px 8px rgba(253,203,110,0.4); }
+    .result-circle {
+      width: 170px; height: 170px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 32px rgba(0,184,148,.3);
+    }
+    .result-inner {
+      width: 138px; height: 138px;
+      border-radius: 50%;
+      background: white;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,.06);
+    }
+    .result-score { font-size: 3rem; font-weight: 900; color: var(--green); }
+    .result-total { font-size: .95rem; color: var(--muted); font-weight: 700; }
+    .result-title { font-size: 1.9rem; font-weight: 900; color: var(--text); margin-bottom: 10px; }
+    .result-msg   { color: var(--muted); font-size: 1.05rem; font-weight: 600; margin-bottom: 30px; line-height: 1.5; }
 
-  .option-btn:hover:not(:disabled) {
-    border-color: var(--pink);
-    background: #fff5f9;
-    transform: translateY(-3px) scale(1.01);
-    box-shadow: 0 8px 24px rgba(255,107,157,0.18);
-  }
+    .result-badges { display: flex; justify-content: center; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+    .r-badge { padding: 8px 18px; border-radius: 20px; font-size: .85rem; font-weight: 800; border: 2px solid; }
+    .r-badge.g { background: #e8fdf5; border-color: #b2f0d4; color: #00695c; }
+    .r-badge.r { background: #fff3f0; border-color: #ffd0c0; color: #c0392b; }
 
-  .option-btn:disabled { cursor: default; }
+    .retry-btn {
+      padding: 15px 44px;
+      background: linear-gradient(135deg, var(--red-flag), var(--pink));
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 1.05rem;
+      font-weight: 900;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all .2s;
+      box-shadow: 0 6px 20px rgba(218,2,14,.3);
+    }
+    .retry-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(218,2,14,.4); }
 
-  .option-btn.correct {
-    border-color: #00b894 !important;
-    background: #f0fff8 !important;
-    box-shadow: 0 6px 24px rgba(0,184,148,0.25) !important;
-    transform: scale(1.02) !important;
-  }
-  .option-btn.correct .letter {
-    background: linear-gradient(135deg, #00b894, #00cec9) !important;
-    box-shadow: 0 3px 12px rgba(0,184,148,0.5) !important;
-  }
-
-  .option-btn.wrong {
-    border-color: #e17055 !important;
-    background: #fff5f3 !important;
-  }
-  .option-btn.wrong .letter {
-    background: linear-gradient(135deg, #e17055, #d63031) !important;
-    box-shadow: 0 3px 12px rgba(225,112,85,0.5) !important;
-  }
-
-  /* ── EXPLANATION ── */
-  .explanation {
-    display: none;
-    margin-top: 20px;
-    padding: 16px 20px;
-    border-radius: 14px;
-    font-size: 0.97rem;
-    font-weight: 600;
-    line-height: 1.6;
-  }
-  .explanation.show { display: block; animation: popIn 0.35s ease; }
-  .explanation.correct-exp { background: #e8fdf5; border: 2px solid #b2f0d4; color: #00695c; }
-  .explanation.wrong-exp   { background: #fff3f0; border: 2px solid #ffd0c0; color: #c0392b; }
-
-  /* ── NAV ── */
-  .nav-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 26px;
-    gap: 10px;
-  }
-
-  .nav-btn {
-    padding: 11px 26px;
-    border-radius: 50px;
-    border: 2.5px solid var(--border);
-    background: white;
-    color: var(--muted);
-    font-size: 0.92rem;
-    font-weight: 800;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  }
-  .nav-btn:hover:not(:disabled) { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
-  .nav-btn:disabled { opacity: 0.3; cursor: default; }
-  .nav-btn.primary {
-    background: linear-gradient(135deg, var(--red-flag), var(--pink));
-    border-color: transparent;
-    color: white;
-    box-shadow: 0 4px 16px rgba(218,2,14,0.3);
-  }
-  .nav-btn.primary:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(218,2,14,0.35); }
-
-  .nav-counter {
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--muted);
-    background: #f7f0ff;
-    padding: 6px 14px;
-    border-radius: 20px;
-  }
-
-  /* ── RESULT ── */
-  #result-screen {
-    display: none;
-    text-align: center;
-    animation: popIn 0.5s ease;
-    padding: 40px 20px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .result-confetti { font-size: 3rem; margin-bottom: 10px; animation: bounce 1s ease infinite alternate; }
-  @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-12px); } }
-
-  .result-circle {
-    width: 170px; height: 170px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 24px;
-    box-shadow: 0 8px 32px rgba(0,184,148,0.3);
-  }
-  .result-inner {
-    width: 138px; height: 138px;
-    border-radius: 50%;
-    background: white;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    box-shadow: inset 0 2px 8px rgba(0,0,0,0.06);
-  }
-  .result-score { font-size: 3rem; font-weight: 900; color: var(--green); }
-  .result-total { font-size: 0.95rem; color: var(--muted); font-weight: 700; }
-  .result-title { font-size: 1.9rem; font-weight: 900; color: var(--text); margin-bottom: 10px; }
-  .result-msg   { color: var(--muted); font-size: 1.05rem; font-weight: 600; margin-bottom: 30px; line-height: 1.5; }
-
-  .result-badges { display: flex; justify-content: center; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
-  .r-badge { padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; border: 2px solid; }
-  .r-badge.g { background: #e8fdf5; border-color: #b2f0d4; color: #00695c; }
-  .r-badge.r { background: #fff3f0; border-color: #ffd0c0; color: #c0392b; }
-
-  .retry-btn {
-    display: inline-block;
-    padding: 15px 44px;
-    background: linear-gradient(135deg, var(--red-flag), var(--pink));
-    border: none; border-radius: 50px;
-    color: white;
-    font-size: 1.05rem; font-weight: 900;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 6px 20px rgba(218,2,14,0.3);
-  }
-  .retry-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(218,2,14,0.4); }
-
-  /* ── FLOATING SIDE DECOR ── */
-  .float-item {
-    position: fixed;
-    pointer-events: none;
-    z-index: 0;
-    animation: floatAnim ease-in-out infinite alternate;
-    opacity: 0.55;
-    font-size: 1.4rem;
-    user-select: none;
-  }
-  @keyframes floatAnim {
-    from { transform: translateY(0px) rotate(-5deg); }
-    to   { transform: translateY(-16px) rotate(5deg); }
-  }
-</style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .options-grid  { grid-template-columns: 1fr; }
+      .header h1     { font-size: 1.5rem; }
+      .question-card { padding: 24px 20px 20px; }
+      .question-text { font-size: 1.15rem; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="bg-deco"></div>
+  <!-- Pastel radial background -->
+  <div class="bg-deco" aria-hidden="true"></div>
 
-<!-- Corner flower SVGs -->
-<svg class="corner-svg tl" width="230" height="230" viewBox="0 0 230 230" fill="none">
-  <circle cx="28" cy="28" r="20" fill="#ffd6e7" opacity="0.65"/>
-  <circle cx="72" cy="14" r="11" fill="#ffeaa7" opacity="0.6"/>
-  <circle cx="14" cy="72" r="13" fill="#c7ecee" opacity="0.6"/>
-  <circle cx="105" cy="38" r="8" fill="#dfe6fd" opacity="0.55"/>
-  <circle cx="52" cy="95" r="9" fill="#ffd6e7" opacity="0.5"/>
-  <g transform="translate(148,26) rotate(20)">
-    <ellipse cx="0" cy="-15" rx="7" ry="11" fill="#ffb3c6" opacity="0.72"/>
-    <ellipse cx="14" cy="-5" rx="7" ry="11" fill="#ffb3c6" opacity="0.72" transform="rotate(72 0 0)"/>
-    <ellipse cx="9" cy="13" rx="7" ry="11" fill="#ffb3c6" opacity="0.72" transform="rotate(144 0 0)"/>
-    <ellipse cx="-9" cy="13" rx="7" ry="11" fill="#ffb3c6" opacity="0.72" transform="rotate(216 0 0)"/>
-    <ellipse cx="-14" cy="-5" rx="7" ry="11" fill="#ffb3c6" opacity="0.72" transform="rotate(288 0 0)"/>
-    <circle cx="0" cy="0" r="8" fill="#ffeaa7"/>
-  </g>
-  <text x="88" y="85" font-size="15" opacity="0.45" fill="#a29bfe">✦</text>
-  <text x="42" y="128" font-size="11" opacity="0.38" fill="#fd79a8">✦</text>
-  <text x="168" y="58" font-size="9"  opacity="0.38" fill="#74b9ff">✦</text>
-  <circle cx="190" cy="85" r="5"  fill="#a29bfe" opacity="0.38"/>
-  <circle cx="208" cy="105" r="3.5" fill="#fd79a8" opacity="0.33"/>
-  <circle cx="218" cy="128" r="6" fill="#55efc4" opacity="0.32"/>
-</svg>
+  <!-- Corner SVG flower decorations -->
+  <svg class="corner-svg tl" width="230" height="230" viewBox="0 0 230 230" fill="none" aria-hidden="true">
+    <circle cx="28" cy="28" r="20" fill="#ffd6e7" opacity=".65"/>
+    <circle cx="72" cy="14" r="11" fill="#ffeaa7" opacity=".6"/>
+    <circle cx="14" cy="72" r="13" fill="#c7ecee" opacity=".6"/>
+    <circle cx="105" cy="38" r="8" fill="#dfe6fd" opacity=".55"/>
+    <circle cx="52" cy="95" r="9" fill="#ffd6e7" opacity=".5"/>
+    <g transform="translate(148,26) rotate(20)">
+      <ellipse cx="0" cy="-15" rx="7" ry="11" fill="#ffb3c6" opacity=".72"/>
+      <ellipse cx="14" cy="-5" rx="7" ry="11" fill="#ffb3c6" opacity=".72" transform="rotate(72 0 0)"/>
+      <ellipse cx="9" cy="13" rx="7" ry="11" fill="#ffb3c6" opacity=".72" transform="rotate(144 0 0)"/>
+      <ellipse cx="-9" cy="13" rx="7" ry="11" fill="#ffb3c6" opacity=".72" transform="rotate(216 0 0)"/>
+      <ellipse cx="-14" cy="-5" rx="7" ry="11" fill="#ffb3c6" opacity=".72" transform="rotate(288 0 0)"/>
+      <circle cx="0" cy="0" r="8" fill="#ffeaa7"/>
+    </g>
+    <text x="88" y="85" font-size="15" opacity=".45" fill="#a29bfe">✦</text>
+    <text x="42" y="128" font-size="11" opacity=".38" fill="#fd79a8">✦</text>
+    <text x="168" y="58" font-size="9" opacity=".38" fill="#74b9ff">✦</text>
+    <circle cx="190" cy="85" r="5" fill="#a29bfe" opacity=".38"/>
+    <circle cx="208" cy="105" r="3.5" fill="#fd79a8" opacity=".33"/>
+    <circle cx="218" cy="128" r="6" fill="#55efc4" opacity=".32"/>
+  </svg>
 
-<svg class="corner-svg tr" width="230" height="230" viewBox="0 0 230 230" fill="none">
-  <circle cx="28" cy="28" r="20" fill="#c7ecee" opacity="0.62"/>
-  <circle cx="72" cy="14" r="11" fill="#dfe6fd" opacity="0.58"/>
-  <circle cx="14" cy="72" r="13" fill="#ffd6e7" opacity="0.58"/>
-  <g transform="translate(148,30) rotate(-15)">
-    <ellipse cx="0" cy="-15" rx="7" ry="11" fill="#b2f0e8" opacity="0.72"/>
-    <ellipse cx="14" cy="-5" rx="7" ry="11" fill="#b2f0e8" opacity="0.72" transform="rotate(72 0 0)"/>
-    <ellipse cx="9" cy="13" rx="7" ry="11" fill="#b2f0e8" opacity="0.72" transform="rotate(144 0 0)"/>
-    <ellipse cx="-9" cy="13" rx="7" ry="11" fill="#b2f0e8" opacity="0.72" transform="rotate(216 0 0)"/>
-    <ellipse cx="-14" cy="-5" rx="7" ry="11" fill="#b2f0e8" opacity="0.72" transform="rotate(288 0 0)"/>
-    <circle cx="0" cy="0" r="8" fill="#ffeaa7"/>
-  </g>
-  <text x="82" y="82" font-size="15" opacity="0.42" fill="#fd79a8">✦</text>
-  <text x="178" y="105" font-size="9" opacity="0.38" fill="#74b9ff">✦</text>
-  <circle cx="195" cy="82" r="5"  fill="#fd79a8" opacity="0.38"/>
-  <circle cx="208" cy="105" r="3.5" fill="#a29bfe" opacity="0.33"/>
-  <circle cx="218" cy="128" r="6" fill="#ffeaa7" opacity="0.32"/>
-</svg>
+  <svg class="corner-svg tr" width="230" height="230" viewBox="0 0 230 230" fill="none" aria-hidden="true">
+    <circle cx="28" cy="28" r="20" fill="#c7ecee" opacity=".62"/>
+    <circle cx="72" cy="14" r="11" fill="#dfe6fd" opacity=".58"/>
+    <circle cx="14" cy="72" r="13" fill="#ffd6e7" opacity=".58"/>
+    <g transform="translate(148,30) rotate(-15)">
+      <ellipse cx="0" cy="-15" rx="7" ry="11" fill="#b2f0e8" opacity=".72"/>
+      <ellipse cx="14" cy="-5" rx="7" ry="11" fill="#b2f0e8" opacity=".72" transform="rotate(72 0 0)"/>
+      <ellipse cx="9" cy="13" rx="7" ry="11" fill="#b2f0e8" opacity=".72" transform="rotate(144 0 0)"/>
+      <ellipse cx="-9" cy="13" rx="7" ry="11" fill="#b2f0e8" opacity=".72" transform="rotate(216 0 0)"/>
+      <ellipse cx="-14" cy="-5" rx="7" ry="11" fill="#b2f0e8" opacity=".72" transform="rotate(288 0 0)"/>
+      <circle cx="0" cy="0" r="8" fill="#ffeaa7"/>
+    </g>
+    <text x="82" y="82" font-size="15" opacity=".42" fill="#fd79a8">✦</text>
+    <circle cx="195" cy="82" r="5" fill="#fd79a8" opacity=".38"/>
+    <circle cx="208" cy="105" r="3.5" fill="#a29bfe" opacity=".33"/>
+    <circle cx="218" cy="128" r="6" fill="#ffeaa7" opacity=".32"/>
+  </svg>
 
-<svg class="corner-svg bl" width="220" height="220" viewBox="0 0 220 220" fill="none">
-  <circle cx="28" cy="28" r="16" fill="#ffeaa7" opacity="0.58"/>
-  <circle cx="62" cy="14" r="10" fill="#ffd6e7" opacity="0.52"/>
-  <circle cx="14" cy="62" r="12" fill="#dfe6fd" opacity="0.52"/>
-  <g transform="translate(128,35) rotate(10)">
-    <ellipse cx="0" cy="-13" rx="6" ry="10" fill="#fdcb6e" opacity="0.65"/>
-    <ellipse cx="12" cy="-4" rx="6" ry="10" fill="#fdcb6e" opacity="0.65" transform="rotate(72 0 0)"/>
-    <ellipse cx="7" cy="11" rx="6" ry="10"  fill="#fdcb6e" opacity="0.65" transform="rotate(144 0 0)"/>
-    <ellipse cx="-7" cy="11" rx="6" ry="10" fill="#fdcb6e" opacity="0.65" transform="rotate(216 0 0)"/>
-    <ellipse cx="-12" cy="-4" rx="6" ry="10" fill="#fdcb6e" opacity="0.65" transform="rotate(288 0 0)"/>
-    <circle cx="0" cy="0" r="7" fill="#fff" opacity="0.9"/>
-  </g>
-  <text x="78" y="78" font-size="13" opacity="0.42" fill="#a29bfe">✦</text>
-  <circle cx="185" cy="62" r="4.5" fill="#74b9ff" opacity="0.38"/>
-  <circle cx="200" cy="82" r="3" fill="#55efc4" opacity="0.33"/>
-</svg>
+  <svg class="corner-svg bl" width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+    <circle cx="28" cy="28" r="16" fill="#ffeaa7" opacity=".58"/>
+    <circle cx="62" cy="14" r="10" fill="#ffd6e7" opacity=".52"/>
+    <circle cx="14" cy="62" r="12" fill="#dfe6fd" opacity=".52"/>
+    <g transform="translate(128,35) rotate(10)">
+      <ellipse cx="0" cy="-13" rx="6" ry="10" fill="#fdcb6e" opacity=".65"/>
+      <ellipse cx="12" cy="-4" rx="6" ry="10" fill="#fdcb6e" opacity=".65" transform="rotate(72 0 0)"/>
+      <ellipse cx="7" cy="11" rx="6" ry="10" fill="#fdcb6e" opacity=".65" transform="rotate(144 0 0)"/>
+      <ellipse cx="-7" cy="11" rx="6" ry="10" fill="#fdcb6e" opacity=".65" transform="rotate(216 0 0)"/>
+      <ellipse cx="-12" cy="-4" rx="6" ry="10" fill="#fdcb6e" opacity=".65" transform="rotate(288 0 0)"/>
+      <circle cx="0" cy="0" r="7" fill="#fff" opacity=".9"/>
+    </g>
+    <text x="78" y="78" font-size="13" opacity=".42" fill="#a29bfe">✦</text>
+    <circle cx="185" cy="62" r="4.5" fill="#74b9ff" opacity=".38"/>
+    <circle cx="200" cy="82" r="3" fill="#55efc4" opacity=".33"/>
+  </svg>
 
-<svg class="corner-svg br" width="220" height="220" viewBox="0 0 220 220" fill="none">
-  <circle cx="28" cy="28" r="18" fill="#dfe6fd" opacity="0.62"/>
-  <circle cx="66" cy="13" r="10" fill="#c7ecee" opacity="0.58"/>
-  <circle cx="13" cy="66" r="12" fill="#ffd6e7" opacity="0.52"/>
-  <g transform="translate(138,30) rotate(-8)">
-    <ellipse cx="0" cy="-14" rx="6.5" ry="10.5" fill="#a29bfe" opacity="0.68"/>
-    <ellipse cx="13" cy="-4" rx="6.5" ry="10.5" fill="#a29bfe" opacity="0.68" transform="rotate(72 0 0)"/>
-    <ellipse cx="8" cy="12" rx="6.5" ry="10.5"  fill="#a29bfe" opacity="0.68" transform="rotate(144 0 0)"/>
-    <ellipse cx="-8" cy="12" rx="6.5" ry="10.5" fill="#a29bfe" opacity="0.68" transform="rotate(216 0 0)"/>
-    <ellipse cx="-13" cy="-4" rx="6.5" ry="10.5" fill="#a29bfe" opacity="0.68" transform="rotate(288 0 0)"/>
-    <circle cx="0" cy="0" r="7.5" fill="#ffeaa7"/>
-  </g>
-  <text x="80" y="78" font-size="13" opacity="0.42" fill="#fd79a8">✦</text>
-  <circle cx="188" cy="68" r="4.5" fill="#fd79a8" opacity="0.38"/>
-  <circle cx="204" cy="90" r="3" fill="#ffeaa7" opacity="0.33"/>
-</svg>
+  <svg class="corner-svg br" width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+    <circle cx="28" cy="28" r="18" fill="#dfe6fd" opacity=".62"/>
+    <circle cx="66" cy="13" r="10" fill="#c7ecee" opacity=".58"/>
+    <circle cx="13" cy="66" r="12" fill="#ffd6e7" opacity=".52"/>
+    <g transform="translate(138,30) rotate(-8)">
+      <ellipse cx="0" cy="-14" rx="6.5" ry="10.5" fill="#a29bfe" opacity=".68"/>
+      <ellipse cx="13" cy="-4" rx="6.5" ry="10.5" fill="#a29bfe" opacity=".68" transform="rotate(72 0 0)"/>
+      <ellipse cx="8" cy="12" rx="6.5" ry="10.5" fill="#a29bfe" opacity=".68" transform="rotate(144 0 0)"/>
+      <ellipse cx="-8" cy="12" rx="6.5" ry="10.5" fill="#a29bfe" opacity=".68" transform="rotate(216 0 0)"/>
+      <ellipse cx="-13" cy="-4" rx="6.5" ry="10.5" fill="#a29bfe" opacity=".68" transform="rotate(288 0 0)"/>
+      <circle cx="0" cy="0" r="7.5" fill="#ffeaa7"/>
+    </g>
+    <text x="80" y="78" font-size="13" opacity=".42" fill="#fd79a8">✦</text>
+    <circle cx="188" cy="68" r="4.5" fill="#fd79a8" opacity=".38"/>
+    <circle cx="204" cy="90" r="3" fill="#ffeaa7" opacity=".33"/>
+  </svg>
 
-<!-- Floating side emoji -->
-<div class="float-item" style="left:1.5%;top:34%;animation-duration:4.2s;animation-delay:0s">🌸</div>
-<div class="float-item" style="left:3%;top:56%;animation-duration:5s;animation-delay:1.5s;font-size:1.1rem">⭐</div>
-<div class="float-item" style="right:2%;top:36%;animation-duration:4.5s;animation-delay:0.7s">🌟</div>
-<div class="float-item" style="right:3%;top:60%;animation-duration:3.8s;animation-delay:2s;font-size:1.05rem">🌺</div>
-<div class="float-item" style="left:1.5%;top:74%;animation-duration:5.5s;animation-delay:0.3s;font-size:1.1rem">💫</div>
-<div class="float-item" style="right:2%;top:76%;animation-duration:4.8s;animation-delay:1s;font-size:1.1rem">✨</div>
+  <!-- Floating side emoji -->
+  <div class="float-item" style="left:1.5%;top:34%;animation-duration:4.2s"  aria-hidden="true">🌸</div>
+  <div class="float-item" style="left:3%;top:56%;animation-duration:5s;animation-delay:1.5s;font-size:1.1rem" aria-hidden="true">⭐</div>
+  <div class="float-item" style="right:2%;top:36%;animation-duration:4.5s;animation-delay:.7s"  aria-hidden="true">🌟</div>
+  <div class="float-item" style="right:3%;top:60%;animation-duration:3.8s;animation-delay:2s;font-size:1.05rem" aria-hidden="true">🌺</div>
+  <div class="float-item" style="left:1.5%;top:74%;animation-duration:5.5s;animation-delay:.3s;font-size:1.1rem" aria-hidden="true">💫</div>
+  <div class="float-item" style="right:2%;top:76%;animation-duration:4.8s;animation-delay:1s;font-size:1.1rem"  aria-hidden="true">✨</div>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="header-emoji-row">🇻🇳 ⭐ 🗺️ ⭐ 🇻🇳</div>
-  <h1>Hoạt Động Đối Ngoại<br>Việt Nam</h1>
-  <div class="subtitle">Ôn tập Lịch Sử · Lớp 12</div>
-  <div class="badge-row">
-    <span class="badge red">📅 1945 – Nay</span>
-    <span class="badge mint">❓ 10 câu hỏi</span>
-    <span class="badge peach">⏱️ Trắc nghiệm</span>
-  </div>
-</div>
-
-<!-- SCORE BAR -->
-<div class="score-bar">
-  <div class="score-item correct">
-    <div class="icon">✅</div>
-    <div class="val" id="sc-correct">0</div>
-    <div class="lbl">Đúng</div>
-  </div>
-  <div class="score-item wrong">
-    <div class="icon">❌</div>
-    <div class="val" id="sc-wrong">0</div>
-    <div class="lbl">Sai</div>
-  </div>
-  <div class="score-item remain">
-    <div class="icon">📝</div>
-    <div class="val" id="sc-remain">10</div>
-    <div class="lbl">Còn lại</div>
-  </div>
-</div>
-
-<!-- PROGRESS DOTS -->
-<div class="progress-wrap">
-  <div class="progress-dots" id="dots"></div>
-</div>
-
-<!-- SLIDES -->
-<div class="slides-container" id="slides-container"></div>
-
-<!-- RESULT -->
-<div id="result-screen">
-  <div class="result-confetti" id="res-confetti">🎉</div>
-  <div class="result-circle" id="result-circle">
-    <div class="result-inner">
-      <div class="result-score" id="res-score">0</div>
-      <div class="result-total">/10</div>
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="header-emoji-row" aria-hidden="true">🇻🇳 ⭐ 🗺️ ⭐ 🇻🇳</div>
+    <h1>Hoạt Động Đối Ngoại<br />Việt Nam</h1>
+    <p class="subtitle">Ôn tập Lịch Sử · Lớp 12</p>
+    <div class="badge-row" aria-label="Thông tin bài quiz">
+      <span class="badge red">📅 1945 – Nay</span>
+      <span class="badge mint">❓ 10 câu hỏi</span>
+      <span class="badge peach">⏱️ Trắc nghiệm</span>
     </div>
-  </div>
-  <div class="result-title" id="res-title">🏆 Xuất sắc!</div>
-  <div class="result-msg" id="res-msg">Bạn nắm vững kiến thức về đối ngoại Việt Nam!</div>
-  <div class="result-badges">
-    <span class="r-badge g" id="rb-correct">✅ 0 câu đúng</span>
-    <span class="r-badge r" id="rb-wrong">❌ 0 câu sai</span>
-  </div>
-  <button class="retry-btn" onclick="restartQuiz()">🔄 Làm lại từ đầu</button>
-</div>
+  </header>
 
-<script>
-const questions = [
-  {
-    q: "Ngày 6/3/1946, Việt Nam ký với Pháp văn bản nào để tạm thời hòa hoãn và đuổi quân Trung Hoa Dân Quốc về nước?",
-    opts: ["Hiệp định Genève", "Hiệp định Sơ bộ Việt – Pháp", "Tạm ước Việt – Pháp", "Hiệp định Paris"],
-    ans: 1,
-    exp: "Ngày 6/3/1946, Việt Nam ký Hiệp định Sơ bộ Việt – Pháp. Pháp công nhận Việt Nam là quốc gia tự do trong Liên hiệp Pháp và quân Trung Hoa Dân Quốc rút khỏi Việt Nam."
-  },
-  {
-    q: "Hiệp định Genève 1954 tạm thời chia cắt Việt Nam tại vĩ tuyến bao nhiêu, đồng thời dự kiến tổng tuyển cử thống nhất năm nào?",
-    opts: ["Vĩ tuyến 16, năm 1955", "Vĩ tuyến 17, năm 1956", "Vĩ tuyến 18, năm 1957", "Vĩ tuyến 20, năm 1958"],
-    ans: 1,
-    exp: "Hiệp định Genève 1954 tạm thời chia cắt đất nước tại vĩ tuyến 17, dự kiến tổng tuyển cử thống nhất năm 1956."
-  },
-  {
-    q: "Trong giai đoạn 1968–1973, Việt Nam đã áp dụng phương thức đàm phán nào để kết hợp với đấu tranh quân sự?",
-    opts: ["Đàm phán đa phương hóa", "Vừa đánh vừa đàm", "Ngoại giao mềm dẻo độc lập", "Đàm phán không điều kiện"],
-    ans: 1,
-    exp: "Giai đoạn 1968–1973, Việt Nam tiến hành đàm phán tại Hội nghị Pari với phương châm 'vừa đánh vừa đàm', kết hợp đấu tranh ngoại giao với quân sự và chính trị."
-  },
-  {
-    q: "Ngày 3/11/1978, Việt Nam ký kết hiệp ước quan trọng gì với Liên Xô?",
-    opts: ["Hiệp ước không xâm phạm", "Hiệp ước phòng thủ chung", "Hiệp ước hữu nghị và hợp tác", "Hiệp ước tương trợ kinh tế"],
-    ans: 2,
-    exp: "Ngày 3/11/1978, Việt Nam ký Hiệp ước hữu nghị và hợp tác với Liên Xô, tăng cường quan hệ để được ủng hộ trong xây dựng và bảo vệ đất nước."
-  },
-  {
-    q: "Việt Nam gia nhập Hội đồng Tương trợ Kinh tế (SEV) vào ngày tháng năm nào?",
-    opts: ["3/11/1978", "29/6/1978", "7/1/1979", "30/4/1975"],
-    ans: 1,
-    exp: "Ngày 29/6/1978, Việt Nam gia nhập Hội đồng Tương trợ Kinh tế (SEV) – tổ chức hợp tác kinh tế của các nước xã hội chủ nghĩa."
-  },
-  {
-    q: "Năm 1977, Việt Nam chính thức gia nhập tổ chức quốc tế nào?",
-    opts: ["ASEAN", "SEV (Hội đồng Tương trợ Kinh tế)", "Liên hợp quốc", "WTO"],
-    ans: 2,
-    exp: "Năm 1977, Việt Nam chính thức gia nhập Liên hợp quốc, qua đó mở rộng quan hệ quốc tế và nâng cao vị thế trên trường quốc tế."
-  },
-  {
-    q: "Việt Nam chính thức gia nhập ASEAN vào năm nào, đánh dấu bước hội nhập khu vực quan trọng?",
-    opts: ["1991", "1993", "1995", "1997"],
-    ans: 2,
-    exp: "Năm 1995, Việt Nam gia nhập ASEAN, mở rộng quan hệ khu vực và tăng cường hợp tác với các nước thành viên Đông Nam Á."
-  },
-  {
-    q: "Sau Đổi mới 1986, đường lối đối ngoại của Việt Nam được định hướng theo phương châm chủ đạo nào?",
-    opts: ["Đơn phương hóa, tập trung vào các nước XHCN", "Đa phương hóa và đa dạng hóa quan hệ quốc tế", "Ưu tiên quan hệ song phương với các cường quốc", "Trung lập hóa hoàn toàn trong quan hệ quốc tế"],
-    ans: 1,
-    exp: "Từ năm 1986, Việt Nam thực hiện đường lối đối ngoại đổi mới: mở rộng quan hệ, đa phương hóa và đa dạng hóa quan hệ quốc tế."
-  },
-  {
-    q: "Việt Nam bình thường hóa quan hệ ngoại giao với Hoa Kỳ vào năm nào và ký Hiệp định Thương mại song phương vào năm nào?",
-    opts: ["1991 và 1995", "1993 và 1998", "1995 và 2000", "1997 và 2001"],
-    ans: 2,
-    exp: "Việt Nam bình thường hóa quan hệ với Hoa Kỳ năm 1995, sau đó ký Hiệp định Thương mại Việt Nam – Hoa Kỳ năm 2000."
-  },
-  {
-    q: "Trong giai đoạn 1975–1985, Việt Nam đã tham gia bao nhiêu tổ chức quốc tế và ký kết bao nhiêu điều ước quốc tế?",
-    opts: ["20 tổ chức và 10 điều ước", "33 tổ chức và 19 điều ước", "40 tổ chức và 25 điều ước", "15 tổ chức và 30 điều ước"],
-    ans: 1,
-    exp: "Trong giai đoạn 1975–1985, Việt Nam tham gia 33 tổ chức quốc tế và 19 điều ước quốc tế, thể hiện sự chủ động hội nhập quốc tế."
-  }
-];
+  <!-- ── QUIZ SLIDES (built by JS) ── -->
+  <main class="slides-container" id="slides-container" aria-live="polite"></main>
 
-const qIcons = ['📜','🗺️','⚔️','🤝','🏛️','🌐','🌏','🔄','🇺🇸','📊'];
-
-let currentQ = 0;
-let answered = new Array(10).fill(null);
-let correctCount = 0, wrongCount = 0;
-
-function buildQuiz() {
-  const container = document.getElementById('slides-container');
-  const dotsEl = document.getElementById('dots');
-  container.innerHTML = '';
-  dotsEl.innerHTML = '';
-
-  questions.forEach((q, i) => {
-    const dot = document.createElement('div');
-    dot.className = 'dot' + (i === 0 ? ' current' : '');
-    dot.textContent = i + 1;
-    dot.onclick = () => goTo(i);
-    dot.id = `dot-${i}`;
-    dotsEl.appendChild(dot);
-
-    const slide = document.createElement('div');
-    slide.className = 'slide' + (i === 0 ? ' active' : '');
-    slide.id = `slide-${i}`;
-
-    const letters = ['A','B','C','D'];
-    const optsHtml = q.opts.map((opt, oi) => `
-      <button class="option-btn" id="opt-${i}-${oi}" onclick="selectAnswer(${i}, ${oi})">
-        <span class="letter">${letters[oi]}</span>
-        ${opt}
-      </button>
-    `).join('');
-
-    slide.innerHTML = `
-      <div class="question-card">
-        <div class="q-header">
-          <div class="question-number">${qIcons[i]} Câu ${i + 1} / 10</div>
-        </div>
-        <div class="question-text">${q.q}</div>
-        <div class="options-grid">${optsHtml}</div>
-        <div class="explanation" id="exp-${i}"></div>
-        <div class="nav-row">
-          <button class="nav-btn" onclick="goTo(${i - 1})" ${i === 0 ? 'disabled' : ''}>← Trước</button>
-          <div class="nav-counter">${i + 1} / 10</div>
-          ${i < 9
-            ? `<button class="nav-btn primary" onclick="goTo(${i + 1})">Tiếp →</button>`
-            : `<button class="nav-btn primary" onclick="showResult()">Kết quả 🎉</button>`}
-        </div>
+  <!-- ── RESULT SCREEN ── -->
+  <section id="result-screen" aria-live="assertive">
+    <div class="result-confetti" id="res-confetti" aria-hidden="true">🎉</div>
+    <div class="result-circle" id="result-circle" aria-hidden="true">
+      <div class="result-inner">
+        <div class="result-score" id="res-score">0</div>
+        <div class="result-total">/10</div>
       </div>
-    `;
-    container.appendChild(slide);
-  });
-}
+    </div>
+    <h2 class="result-title" id="res-title">🏆 Xuất sắc!</h2>
+    <p class="result-msg" id="res-msg">Bạn nắm vững kiến thức về đối ngoại Việt Nam!</p>
+    <div class="result-badges">
+      <span class="r-badge g" id="rb-correct">✅ 0 câu đúng</span>
+      <span class="r-badge r" id="rb-wrong">❌ 0 câu sai</span>
+    </div>
+    <button class="retry-btn" onclick="restartQuiz()">🔄 Làm lại từ đầu</button>
+  </section>
 
-function selectAnswer(qIdx, optIdx) {
-  if (answered[qIdx] !== null) return;
-  const q = questions[qIdx];
-  const isCorrect = optIdx === q.ans;
-  answered[qIdx] = isCorrect ? 'correct' : 'wrong';
-  if (isCorrect) correctCount++; else wrongCount++;
+  <script>
+    /* ── DATA ── */
+    const questions = [
+      {
+        q:   "Ngày 6/3/1946, Việt Nam ký với Pháp văn bản nào để tạm thời hòa hoãn và đuổi quân Trung Hoa Dân Quốc về nước?",
+        opts:["Hiệp định Genève","Hiệp định Sơ bộ Việt – Pháp","Tạm ước Việt – Pháp","Hiệp định Paris"],
+        ans: 1,
+        exp: "Ngày 6/3/1946, Việt Nam ký Hiệp định Sơ bộ Việt – Pháp. Pháp công nhận Việt Nam là quốc gia tự do trong Liên hiệp Pháp và quân Trung Hoa Dân Quốc rút khỏi Việt Nam."
+      },
+      {
+        q:   "Hiệp định Genève 1954 tạm thời chia cắt Việt Nam tại vĩ tuyến bao nhiêu, đồng thời dự kiến tổng tuyển cử thống nhất năm nào?",
+        opts:["Vĩ tuyến 16, năm 1955","Vĩ tuyến 17, năm 1956","Vĩ tuyến 18, năm 1957","Vĩ tuyến 20, năm 1958"],
+        ans: 1,
+        exp: "Hiệp định Genève 1954 tạm thời chia cắt đất nước tại vĩ tuyến 17, dự kiến tổng tuyển cử thống nhất năm 1956."
+      },
+      {
+        q:   "Trong giai đoạn 1968–1973, Việt Nam đã áp dụng phương thức đàm phán nào để kết hợp với đấu tranh quân sự?",
+        opts:["Đàm phán đa phương hóa","Vừa đánh vừa đàm","Ngoại giao mềm dẻo độc lập","Đàm phán không điều kiện"],
+        ans: 1,
+        exp: "Giai đoạn 1968–1973, Việt Nam tiến hành đàm phán tại Hội nghị Pari với phương châm 'vừa đánh vừa đàm', kết hợp đấu tranh ngoại giao với quân sự và chính trị."
+      },
+      {
+        q:   "Ngày 3/11/1978, Việt Nam ký kết hiệp ước quan trọng gì với Liên Xô?",
+        opts:["Hiệp ước không xâm phạm","Hiệp ước phòng thủ chung","Hiệp ước hữu nghị và hợp tác","Hiệp ước tương trợ kinh tế"],
+        ans: 2,
+        exp: "Ngày 3/11/1978, Việt Nam ký Hiệp ước hữu nghị và hợp tác với Liên Xô, tăng cường quan hệ để được ủng hộ trong xây dựng và bảo vệ đất nước."
+      },
+      {
+        q:   "Việt Nam gia nhập Hội đồng Tương trợ Kinh tế (SEV) vào ngày tháng năm nào?",
+        opts:["3/11/1978","29/6/1978","7/1/1979","30/4/1975"],
+        ans: 1,
+        exp: "Ngày 29/6/1978, Việt Nam gia nhập Hội đồng Tương trợ Kinh tế (SEV) – tổ chức hợp tác kinh tế của các nước xã hội chủ nghĩa."
+      },
+      {
+        q:   "Năm 1977, Việt Nam chính thức gia nhập tổ chức quốc tế nào?",
+        opts:["ASEAN","SEV (Hội đồng Tương trợ Kinh tế)","Liên hợp quốc","WTO"],
+        ans: 2,
+        exp: "Năm 1977, Việt Nam chính thức gia nhập Liên hợp quốc, qua đó mở rộng quan hệ quốc tế và nâng cao vị thế trên trường quốc tế."
+      },
+      {
+        q:   "Việt Nam chính thức gia nhập ASEAN vào năm nào, đánh dấu bước hội nhập khu vực quan trọng?",
+        opts:["1991","1993","1995","1997"],
+        ans: 2,
+        exp: "Năm 1995, Việt Nam gia nhập ASEAN, mở rộng quan hệ khu vực và tăng cường hợp tác với các nước thành viên Đông Nam Á."
+      },
+      {
+        q:   "Sau Đổi mới 1986, đường lối đối ngoại của Việt Nam được định hướng theo phương châm chủ đạo nào?",
+        opts:["Đơn phương hóa, tập trung vào các nước XHCN","Đa phương hóa và đa dạng hóa quan hệ quốc tế","Ưu tiên quan hệ song phương với các cường quốc","Trung lập hóa hoàn toàn trong quan hệ quốc tế"],
+        ans: 1,
+        exp: "Từ năm 1986, Việt Nam thực hiện đường lối đối ngoại đổi mới: mở rộng quan hệ, đa phương hóa và đa dạng hóa quan hệ quốc tế."
+      },
+      {
+        q:   "Việt Nam bình thường hóa quan hệ ngoại giao với Hoa Kỳ vào năm nào và ký Hiệp định Thương mại song phương vào năm nào?",
+        opts:["1991 và 1995","1993 và 1998","1995 và 2000","1997 và 2001"],
+        ans: 2,
+        exp: "Việt Nam bình thường hóa quan hệ với Hoa Kỳ năm 1995, sau đó ký Hiệp định Thương mại Việt Nam – Hoa Kỳ năm 2000."
+      },
+      {
+        q:   "Trong giai đoạn 1975–1985, Việt Nam đã tham gia bao nhiêu tổ chức quốc tế và ký kết bao nhiêu điều ước quốc tế?",
+        opts:["20 tổ chức và 10 điều ước","33 tổ chức và 19 điều ước","40 tổ chức và 25 điều ước","15 tổ chức và 30 điều ước"],
+        ans: 1,
+        exp: "Trong giai đoạn 1975–1985, Việt Nam tham gia 33 tổ chức quốc tế và 19 điều ước quốc tế, thể hiện sự chủ động hội nhập quốc tế."
+      }
+    ];
 
-  for (let i = 0; i < 4; i++) {
-    const btn = document.getElementById(`opt-${qIdx}-${i}`);
-    btn.disabled = true;
-    if (i === q.ans) btn.classList.add('correct');
-    else if (i === optIdx && !isCorrect) btn.classList.add('wrong');
-  }
+    const ICONS   = ["📜","🗺️","⚔️","🤝","🏛️","🌐","🌏","🔄","🇺🇸","📊"];
+    const LETTERS = ["A","B","C","D"];
 
-  const expEl = document.getElementById(`exp-${qIdx}`);
-  expEl.textContent = (isCorrect ? '✅ Chính xác! ' : '❌ Chưa đúng. ') + q.exp;
-  expEl.className = `explanation show ${isCorrect ? 'correct-exp' : 'wrong-exp'}`;
+    /* ── STATE ── */
+    let currentQ    = 0;
+    let answered    = new Array(questions.length).fill(null);
+    let correctCount = 0;
+    let wrongCount   = 0;
 
-  const dot = document.getElementById(`dot-${qIdx}`);
-  dot.classList.remove('current');
-  dot.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+    /* ── BUILD ── */
+    function buildQuiz() {
+      const container = document.getElementById("slides-container");
+      container.innerHTML = "";
 
-  document.getElementById('sc-correct').textContent = correctCount;
-  document.getElementById('sc-wrong').textContent = wrongCount;
-  document.getElementById('sc-remain').textContent = 10 - correctCount - wrongCount;
-}
+      questions.forEach((q, i) => {
+        const slide = document.createElement("div");
+        slide.className = "slide" + (i === 0 ? " active" : "");
+        slide.id = "slide-" + i;
 
-function goTo(idx) {
-  if (idx < 0 || idx >= 10) return;
-  document.getElementById(`slide-${currentQ}`).classList.remove('active');
-  document.getElementById(`dot-${currentQ}`).classList.remove('current');
-  currentQ = idx;
-  document.getElementById(`slide-${currentQ}`).classList.add('active');
-  if (!answered[currentQ]) document.getElementById(`dot-${currentQ}`).classList.add('current');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+        const optsHtml = q.opts.map((opt, oi) =>
+          `<button class="option-btn" id="opt-${i}-${oi}" onclick="selectAnswer(${i},${oi})">
+             <span class="letter" aria-hidden="true">${LETTERS[oi]}</span>${opt}
+           </button>`
+        ).join("");
 
-function showResult() {
-  document.getElementById('slides-container').style.display = 'none';
-  document.getElementById('result-screen').style.display = 'block';
+        const nextBtn = i < questions.length - 1
+          ? `<button class="nav-btn primary" onclick="goTo(${i + 1})">Tiếp →</button>`
+          : `<button class="nav-btn primary" onclick="showResult()">Kết quả 🎉</button>`;
 
-  const pct = correctCount / 10;
-  document.getElementById('res-score').textContent = correctCount;
-  document.getElementById('rb-correct').textContent = `✅ ${correctCount} câu đúng`;
-  document.getElementById('rb-wrong').textContent = `❌ ${wrongCount} câu sai`;
+        slide.innerHTML =
+          `<div class="question-card">
+             <div class="q-header">
+               <div class="question-number">${ICONS[i]} Câu ${i + 1} / ${questions.length}</div>
+             </div>
+             <p class="question-text">${q.q}</p>
+             <div class="options-grid">${optsHtml}</div>
+             <div class="explanation" id="exp-${i}" role="alert"></div>
+             <div class="nav-row">
+               <button class="nav-btn" onclick="goTo(${i - 1})" ${i === 0 ? "disabled" : ""}>← Trước</button>
+               <div class="nav-counter">${i + 1} / ${questions.length}</div>
+               ${nextBtn}
+             </div>
+           </div>`;
 
-  const circle = document.getElementById('result-circle');
-  circle.style.background = `conic-gradient(#00b894 ${pct*360}deg, #e8fdf5 0deg)`;
+        container.appendChild(slide);
+      });
+    }
 
-  let emoji, title, msg;
-  if (correctCount === 10)      { emoji='🏆'; title='Xuất sắc hoàn hảo!'; msg='Bạn nắm vững tuyệt đối kiến thức đối ngoại Việt Nam! 🌟'; }
-  else if (correctCount >= 8)   { emoji='🎉'; title='Rất giỏi!'; msg='Bạn hiểu rõ phần lớn kiến thức. Thêm một chút nữa thôi! 💪'; }
-  else if (correctCount >= 6)   { emoji='👍'; title='Khá tốt!'; msg='Ổn đấy! Hãy ôn thêm các mốc sự kiện quan trọng nhé. 📚'; }
-  else if (correctCount >= 4)   { emoji='📖'; title='Cần cố gắng thêm!'; msg='Xem lại bài và thử lần nữa, bạn sẽ tiến bộ thôi! 🌱'; }
-  else                          { emoji='💪'; title='Cố lên nào!'; msg='Đừng nản lòng! Xem lại bài học rồi thử lại nhé. Lần sau nhất định tốt hơn! 🌈'; }
+    /* ── SELECT ANSWER ── */
+    function selectAnswer(qIdx, optIdx) {
+      if (answered[qIdx] !== null) return;
 
-  document.getElementById('res-confetti').textContent = emoji;
-  document.getElementById('res-title').textContent = title;
-  document.getElementById('res-msg').textContent = msg;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+      const q         = questions[qIdx];
+      const isCorrect = optIdx === q.ans;
 
-function restartQuiz() {
-  currentQ = 0;
-  answered = new Array(10).fill(null);
-  correctCount = 0; wrongCount = 0;
-  document.getElementById('sc-correct').textContent = 0;
-  document.getElementById('sc-wrong').textContent = 0;
-  document.getElementById('sc-remain').textContent = 10;
-  document.getElementById('result-screen').style.display = 'none';
-  document.getElementById('slides-container').style.display = 'block';
-  buildQuiz();
-}
+      answered[qIdx] = isCorrect ? "correct" : "wrong";
+      if (isCorrect) correctCount++; else wrongCount++;
 
-buildQuiz();
-</script>
+      for (let i = 0; i < q.opts.length; i++) {
+        const btn = document.getElementById("opt-" + qIdx + "-" + i);
+        btn.disabled = true;
+        if (i === q.ans)                    btn.classList.add("correct");
+        else if (i === optIdx && !isCorrect) btn.classList.add("wrong");
+      }
+
+      const expEl = document.getElementById("exp-" + qIdx);
+      expEl.textContent = (isCorrect ? "✅ Chính xác! " : "❌ Chưa đúng. ") + q.exp;
+      expEl.className   = "explanation show " + (isCorrect ? "correct-exp" : "wrong-exp");
+    }
+
+    /* ── NAVIGATE ── */
+    function goTo(idx) {
+      if (idx < 0 || idx >= questions.length) return;
+      document.getElementById("slide-" + currentQ).classList.remove("active");
+      currentQ = idx;
+      document.getElementById("slide-" + currentQ).classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    /* ── RESULT ── */
+    function showResult() {
+      document.getElementById("slides-container").style.display = "none";
+      document.getElementById("result-screen").style.display    = "block";
+
+      const pct = correctCount / questions.length;
+      document.getElementById("result-circle").style.background =
+        `conic-gradient(#00b894 ${pct * 360}deg, #e8fdf5 0deg)`;
+      document.getElementById("res-score").textContent    = correctCount;
+      document.getElementById("rb-correct").textContent   = "✅ " + correctCount + " câu đúng";
+      document.getElementById("rb-wrong").textContent     = "❌ " + wrongCount   + " câu sai";
+
+      let emoji, title, msg;
+      if      (correctCount === 10) { emoji="🏆"; title="Xuất sắc hoàn hảo!";   msg="Bạn nắm vững tuyệt đối kiến thức đối ngoại Việt Nam! 🌟"; }
+      else if (correctCount >= 8)   { emoji="🎉"; title="Rất giỏi!";             msg="Bạn hiểu rõ phần lớn kiến thức. Thêm một chút nữa thôi! 💪"; }
+      else if (correctCount >= 6)   { emoji="👍"; title="Khá tốt!";              msg="Ổn đấy! Hãy ôn thêm các mốc sự kiện quan trọng nhé. 📚"; }
+      else if (correctCount >= 4)   { emoji="📖"; title="Cần cố gắng thêm!";     msg="Xem lại bài và thử lần nữa, bạn sẽ tiến bộ thôi! 🌱"; }
+      else                          { emoji="💪"; title="Cố lên nào!";            msg="Đừng nản lòng! Xem lại bài học rồi thử lại nhé. 🌈"; }
+
+      document.getElementById("res-confetti").textContent = emoji;
+      document.getElementById("res-title").textContent    = title;
+      document.getElementById("res-msg").textContent      = msg;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    /* ── RESTART ── */
+    function restartQuiz() {
+      currentQ     = 0;
+      answered     = new Array(questions.length).fill(null);
+      correctCount = 0;
+      wrongCount   = 0;
+      document.getElementById("result-screen").style.display   = "none";
+      document.getElementById("slides-container").style.display = "";
+      buildQuiz();
+    }
+
+    /* ── INIT ── */
+    buildQuiz();
+  </script>
 </body>
 </html>
